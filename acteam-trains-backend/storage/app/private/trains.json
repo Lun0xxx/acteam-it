@@ -1,0 +1,130 @@
+{
+    "arrivees": [
+        {
+            "numero": "TER8394",
+            "provenance": "Lyon Part-Dieu",
+            "heure": "13:45",
+            "retard": 0
+        },
+        {
+            "numero": "TGV7812",
+            "provenance": "Marseille Saint-Charles",
+            "heure": "14:10",
+            "retard": 5
+        },
+        {
+            "numero": "IC2401",
+            "provenance": "Bordeaux Saint-Jean",
+            "heure": "13:30",
+            "retard": 0
+        },
+        {
+            "numero": "TER1032",
+            "provenance": "Dijon",
+            "heure": "14:00",
+            "retard": 2
+
+        },
+        {
+            "numero": "OUIGO7820",
+            "provenance": "Nice Ville",
+            "heure": "14:20",
+            "retard": 0
+        },
+        {
+            "numero": "TER9401",
+            "provenance": "Grenoble",
+            "heure": "13:55",
+            "retard": 3
+        },
+        {
+            "numero": "TGV8911",
+            "provenance": "Lille Europe",
+            "heure": "14:25",
+            "retard": 0
+        },
+        {
+            "numero": "TER4561",
+            "provenance": "Clermont-Ferrand",
+            "heure": "14:35",
+            "retard": 0
+        },
+        {
+            "numero": "TGV7341",
+            "provenance": "Strasbourg",
+
+            "heure": "14:45",
+            "retard": 10
+        },
+        {
+            "numero": "TER2189",
+            "provenance": "Chambéry",
+            "heure": "14:50",
+            "retard": 0
+        }
+    ],
+    "depart": [
+        {
+            "numero": "TGV7821",
+            "destination": "Paris Gare de Lyon",
+            "heure": "14:00",
+            "retard": 5
+        },
+        {
+            "numero": "TER4591",
+            "destination": "Valence Ville",
+            "heure": "13:40",
+            "retard": 0
+        },
+        {
+            "numero": "IC3201",
+            "destination": "Nantes",
+            "heure": "13:50",
+            "retard": 3
+
+        },
+        {
+            "numero": "OUIGO7843",
+            "destination": "Toulouse Matabiau",
+            "heure": "14:10",
+            "retard": 0
+        },
+        {
+            "numero": "TGV1234",
+            "destination": "Le Havre",
+            "heure": "14:15",
+            "retard": 0
+        },
+        {
+            "numero": "TER4021",
+            "destination": "Saint-Étienne",
+            "heure": "14:20",
+            "retard": 0
+        },
+        {
+            "numero": "TER5003",
+            "destination": "Annecy",
+            "heure": "14:25",
+            "retard": 0
+        },
+        {
+            "numero": "TGV9999",
+            "destination": "Reims",
+
+            "heure": "14:35",
+            "retard": 2
+        },
+        {
+            "numero": "TER7211",
+            "destination": "Chalon-sur-Saône",
+            "heure": "14:40",
+            "retard": 0
+        },
+        {
+            "numero": "TGV7007",
+            "destination": "Montpellier",
+            "heure": "14:50",
+            "retard": 0
+        }
+    ]
+}
