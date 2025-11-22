@@ -51,9 +51,9 @@ Route::get('/trains-data', function () {
 
     // Sorting arriving trains in chronological order
     usort($arrivees, function ($a, $b) {
-        if ($a['heure'] < $b['heure']) {
+        if (strtotime($a['heure']) < strtotime($b['heure'])) {
             return -1;
-        } elseif ($a['heure'] > $b['heure']) {
+        } elseif (strtotime($a['heure']) > strtotime($b['heure'])) {
             return 1;
         }
 
@@ -62,9 +62,9 @@ Route::get('/trains-data', function () {
 
     // Sorting departing train in chronological order
     usort($departs, function ($a, $b) {
-        if ($a['heure'] < $b['heure']) {
+        if (strtotime($a['heure']) < strtotime($b['heure'])) {
             return -1;
-        } elseif ($a['heure'] > $b['heure']) {
+        } elseif (strtotime($a['heure']) > strtotime($b['heure'])) {
             return 1;
         }
 
@@ -76,13 +76,12 @@ Route::get('/trains-data', function () {
 
     // Adding the interval between arriving time and late time
     foreach ($arrivees as $arrivee) {
+        $trainTimestamp = strtotime($arrivee['heure']);
         if (isset($arrivee['retard']) && $arrivee['retard'] > 0) {
-            $time = DateTime::createFromFormat('H:i', $arrivee['heure']);
-            $interval = new DateInterval('PT' . $arrivee['retard'] . 'M');
-            $time->add($interval);
-            $retard = $time->format('H:i');
+            $retardInSeconds = $arrivee['retard'] * 60;
+            $trainTimestamp += $retardInSeconds;
 
-            $arriveesRetards[$arrivee['numero']] = $retard;
+            $arriveesRetards[$arrivee['numero']] = date('H:i', $trainTimestamp);
         }
     }
 
@@ -91,13 +90,12 @@ Route::get('/trains-data', function () {
 
     // Adding the interval between departing time and late time
     foreach ($departs as $depart) {
+        $trainTimestamp = strtotime($depart['heure']);
         if (isset($depart['retard']) && $depart['retard'] > 0) {
-            $time = DateTime::createFromFormat('H:i', $depart['heure']);
-            $interval = new DateInterval('PT' . $depart['retard'] . 'M');
-            $time->add($interval);
-            $retard = $time->format('H:i');
+            $retardInSeconds = $depart['retard'] * 60;
+            $trainTimestamp += $retardInSeconds;
 
-            $departsRetards[$depart['numero']] = $retard;
+            $departsRetards[$depart['numero']] = date('H:i', $trainTimestamp);
         }
     }
 
@@ -148,17 +146,17 @@ Route::get('/get-next-arrival', function () {
 
     // Sorting the arriving trains in chronological order
     usort($arrivees, function ($a, $b) {
-        $timeA = DateTime::createFromFormat('H:i', $a['heure']);
-        $timeB = DateTime::createFromFormat('H:i', $b['heure']);
+        $timeA = strtotime($a['heure']);
+        $timeB = strtotime($b['heure']);
 
         if (isset($a['retard']) && $a['retard'] > 0) {
-            $interval = new DateInterval('PT' . $a['retard'] . 'M');
-            $timeA->add($interval);
+            $retard = $a['retard'] * 60;
+            $timeA += $retard;
         }
 
         if (isset($b['retard']) && $b['retard'] > 0) {
-            $interval = new DateInterval('PT' . $b['retard'] . 'M');
-            $timeB->add($interval);
+            $retard = $b['retard'] * 60;
+            $timeB += $retard;
         }
         if ($timeA < $timeB) {
             return -1;
@@ -171,19 +169,24 @@ Route::get('/get-next-arrival', function () {
 
     // Checking for next arriving train in condition to actual time
     foreach ($arrivees as $arrivee) {
-        $now = new DateTime();
+        $now = date('H:i');
+        $nowTimestamp = strtotime($now);
 
-        $time = DateTime::createFromFormat('H:i', $arrivee['heure']);
+        $time = strtotime($arrivee['heure']);
 
         if (isset($arrivee['retard']) && $arrivee['retard'] > 0) {
-            $interval = new DateInterval('PT' . $arrivee['retard'] . 'M');
-            $time->add($interval);
+            $retard = $arrivee['retard'] * 60;
+            $time += $retard;
         }
 
-        if ($time >= $now) {
+        if ($time >= $nowTimestamp) {
             $nextTrain = $arrivee;
             break;
         }
+    }
+
+    if ($nextTrain == null) {
+        $nextTrain = $arrivees[0];
     }
 
     // Returning a json with :
@@ -228,17 +231,17 @@ Route::get('/get-next-departure', function () {
 
     // Sorting departing trains in chronological order
     usort($departs, function ($a, $b) {
-        $timeA = DateTime::createFromFormat('H:i', $a['heure']);
-        $timeB = DateTime::createFromFormat('H:i', $b['heure']);
+        $timeA = strtotime($a['heure']);
+        $timeB = strtotime($b['heure']);
 
         if (isset($a['retard']) && $a['retard'] > 0) {
-            $interval = new DateInterval('PT' . $a['retard'] . 'M');
-            $timeA->add($interval);
+            $retard = $a['retard'] * 60;
+            $timeA += $retard;
         }
 
         if (isset($b['retard']) && $b['retard'] > 0) {
-            $interval = new DateInterval('PT' . $b['retard'] . 'M');
-            $timeB->add($interval);
+            $retard = $b['retard'] * 60;
+            $timeB += $retard;
         }
         if ($timeA < $timeB) {
             return -1;
@@ -254,19 +257,24 @@ Route::get('/get-next-departure', function () {
 
     // Checking for next departing train in condition to actual time
     foreach ($departs as $depart) {
-        $now = new DateTime();
+        $now = date('H:i');
+        $nowTimestamp = strtotime($now);
 
-        $time = DateTime::createFromFormat('H:i', $depart['heure']);
+        $time = strtotime($depart['heure']);
 
         if (isset($depart['retard']) && $depart['retard'] > 0) {
-            $interval = new DateInterval('PT' . $depart['retard'] . 'M');
-            $time->add($interval);
+            $retard = $depart['retard'] * 60;
+            $time += $retard;
         }
 
-        if ($time >= $now) {
+        if ($time >= $nowTimestamp) {
             $nextTrain = $depart;
             break;
         }
+    }
+
+    if ($nextTrain == null) {
+        $nextTrain = $departs[0];
     }
 
     // Returning a json with :
