@@ -2,7 +2,7 @@ import TrainComponent from './TrainComponent';
 
 export default function TrainsList({ index, type, list, lates }) {
     return (
-        <div className={`flex flex-col h-[80%] w-full shadow-(--blue-shadow) rounded-xl p-5 mb-5
+        <div className={`flex flex-col h-[78%] w-full shadow-(--blue-shadow) rounded-xl p-5 mb-5
             ${index !== 0 ? 'mr-5': ''}
         `}>
             <span className="text-3xl pb-5">{ type }</span>
