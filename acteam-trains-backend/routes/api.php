@@ -171,7 +171,7 @@ Route::get('/get-next-arrival', function () {
 
     // Checking for next arriving train in condition to actual time
     foreach ($arrivees as $arrivee) {
-        $now = date('H:i');
+        $now = new DateTime();
 
         $time = DateTime::createFromFormat('H:i', $arrivee['heure']);
 
@@ -254,7 +254,7 @@ Route::get('/get-next-departure', function () {
 
     // Checking for next departing train in condition to actual time
     foreach ($departs as $depart) {
-        $now = date('H:i');
+        $now = new DateTime();
 
         $time = DateTime::createFromFormat('H:i', $depart['heure']);
 
