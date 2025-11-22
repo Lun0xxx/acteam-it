@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+    --blue-shadow: 0px 0px 39px 10px rgba(116, 208, 241,0.20);
+}
+
+#root, html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    padding: 30px;
+}
