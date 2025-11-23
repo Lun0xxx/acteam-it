@@ -9,12 +9,11 @@
 
 ## Docker
 🔴 Aucune connexion n'est requise  
-Assurez-vous que la virtualisation est activée si vous êtes sur Windows / Linux  
-Installez Docker si ce n'est pas déjà fait.  
+Assurez-vous que la virtualisation est activée si vous êtes sur Windows / Linux   
 
 #### Windows / macOS
 
-Téléchargez [Docker](https://www.docker.com/).  
+Téléchargez et installez [Docker](https://www.docker.com/).  
 Exécutez le fichier téléchargé pour installer Docker.  
 
 ⚠️ Pour macOS, vous pourriez avoir besoin d'installer docker et docker-compose via homebrew.  
