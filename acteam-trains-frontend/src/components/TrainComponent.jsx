@@ -14,7 +14,7 @@ export default function TrainComponent({index = 0, type, number, from, hour, lat
                 </span>
                 <span id="trainMobile" className="mb-1 flex items-center">
                     <TrainFront />
-                    <span className="font-bold ml-1 text-xs md:text-base"> {number}</span>
+                    <span id="trainNumberMobile" className="font-bold ml-1 text-xs md:text-base"> {number}</span>
                 </span>
                 <span id="fromtoDesktop">
                     {type === "Arrivées" ? 'En provenance de :' : 'À destination de :'}
@@ -23,7 +23,7 @@ export default function TrainComponent({index = 0, type, number, from, hour, lat
                 </span>
                 <span id="fromtoMobile" className="mb-1 flex items-center">
                     { type === "Arrivées" ? <MapPin /> : <Milestone /> }
-                    <span className="inline font-bold ml-1 text-xs md:text-base align-middle">{from}</span>
+                    <span id="trainFromToMobile" className="inline font-bold ml-1 text-xs md:text-base align-middle">{from}</span>
                 </span>
                 <div id="hoursAndClockMobile" className="mr-3 flex flex-1 items-center text-xs md:text-base">
                     <Clock />
