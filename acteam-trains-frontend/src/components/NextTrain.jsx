@@ -9,7 +9,7 @@ export default function NextTrain({ type, lates, train }) {
     const isDepartOrArrivee = (type === "Arrivées" ? { from: train.provenance } : { from: train.destination })
 
     return (
-        <div className="flex flex-col h-[80%] shadow-(--blue-shadow) rounded-xl p-5">
+        <div className="flex flex-col h-[80%] shadow-(--blue-shadow) rounded-xl p-5 mb-5">
             <span className="text-3xl pb-5">{type === "Arrivées" ? "Prochaine arrivée" : "Prochain départ"}</span>
             <TrainComponent
                 type={type}
