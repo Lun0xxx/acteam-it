@@ -69,28 +69,28 @@ function AppContent() {
     return (
         <div className="h-full max-w-[1500px] w-full flex justify-between">
             <div className="flex flex-col w-1/2 pr-3">
-                { trainsData && <TrainsList
-                    type="Départs"
-                    list={trainsData['departs']}
-                    lates={trainsData['retardsDeparts']}
-                /> }
                 { trainsData && nextDepartureTrainData && <NextTrain
                     type={nextDepartureTrainData.type}
                     lates={trainsData['retardsDeparts']}
                     train={nextDepartureTrainData.next}
                 /> }
+                { trainsData && <TrainsList
+                    type="Départs"
+                    list={trainsData['departs']}
+                    lates={trainsData['retardsDeparts']}
+                /> }
             </div>
             <div className="flex flex-col w-1/2 pl-3">
-                { trainsData && <TrainsList
-                    type="Arrivées"
-                    list={trainsData['arrivees']}
-                    lates={trainsData['retardsArrivees']}
-                /> }
                 { trainsData && nextArrivalTrainData && <NextTrain
                     index={1}
                     type={nextArrivalTrainData.type}
                     lates={trainsData['retardsArrivees']}
                     train={nextArrivalTrainData.next}
+                /> }
+                { trainsData && <TrainsList
+                    type="Arrivées"
+                    list={trainsData['arrivees']}
+                    lates={trainsData['retardsArrivees']}
                 /> }
             </div>
         </div>
