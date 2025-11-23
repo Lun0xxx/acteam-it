@@ -13,9 +13,7 @@ Installez Docker si ce n'est pas déjà fait.
 #### Windows / macOS
 
 Téléchargez [Docker](https://www.docker.com/).  
-Exécutez le fichier téléchargé pour installer Docker.
-
-Tout est bon, vous pouvez passer au lancement des conteneurs. 
+Exécutez le fichier téléchargé pour installer Docker.  
 
 ⚠️ Pour macOS, vous pourriez avoir besoin d'installer docker et docker-compose via homebrew.  
 
@@ -25,6 +23,8 @@ Si homebrew n'est pas encore installé, vous pouvez le faire ici :
 Une fois installé, exécutez ces commandes :  
 ```brew install docker```  
 ```brew install docker-compose```
+
+Tout est bon, vous pouvez passer au lancement des conteneurs. 
 
 #### Linux  
 
