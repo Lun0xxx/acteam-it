@@ -10,6 +10,8 @@
 ## Docker
 Installez Docker si ce n'est pas déjà fait.  
 
+  ### Windows
+
 Rendez-vous dans l'archive téléchargée une fois extraite et lancez la commande :  
 ```docker compose up -d```  
 
