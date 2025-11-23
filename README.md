@@ -9,6 +9,7 @@
 
 ## Docker
 🔴 Aucune connexion n'est requise  
+Assurez-vous que la virtualisation est activée si vous êtes sur Windows / Linux  
 Installez Docker si ce n'est pas déjà fait.  
 
 #### Windows / macOS
