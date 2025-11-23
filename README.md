@@ -10,20 +10,21 @@
 ## Docker
 Installez Docker si ce n'est pas déjà fait.  
 
-### Windows / macOS
+#### Windows / macOS
 
 Téléchargez [Docker](https://www.docker.com/).  
 Exécutez le fichier téléchargé pour installer Docker.
 
 Tout est bon, vous pouvez passer à la suite.
 
-### Linux  
+#### Linux  
 
 Téléchargez [Docker pour Linux](https://docs.docker.com/desktop/setup/install/linux/) et suivez les instructions.  
 Suivez les instructions pour télécharger le plugin [Docker Compose](https://docs.docker.com/compose/install/linux/).  
 
-Tout est bon, vous pouvez passer à la suite.
+Tout est bon, vous pouvez passer à la suite.  
 
+### Lancement des conteneurs  
 Rendez-vous dans l'archive téléchargée une fois extraite et lancez la commande :  
 ```docker compose up -d```  
 
