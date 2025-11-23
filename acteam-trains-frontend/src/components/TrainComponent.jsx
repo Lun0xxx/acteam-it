@@ -12,7 +12,7 @@ export default function TrainComponent({index = 0, type, number, from, hour, lat
                     <span className="font-bold"> {number}</span>
                 </span>
                 <span>
-                    {type === "Arrivées" ? 'En provenance de : ' : 'A destination de : '}
+                    {type === "Arrivées" ? 'En provenance de : ' : 'À destination de : '}
                     <span className="font-bold">{from}</span>
                 </span>
             </div>
