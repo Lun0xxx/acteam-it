@@ -10,7 +10,7 @@
 ## Docker
 Installez Docker si ce n'est pas déjà fait.  
 
-#### Windows / macOS
+#### Windows
 
 Téléchargez [Docker](https://www.docker.com/).  
 Exécutez le fichier téléchargé pour installer Docker.
@@ -33,7 +33,7 @@ Lorsque les conteneurs sont démarrés, il ne vous reste plus qu'à vous rendre 
 ## Manuellement   
 Premièrement, téléchargez et installez [PHP](https://www.php.net/downloads.php), [node.js](https://nodejs.org/en/download), [Composer](https://getcomposer.org/download/).  
 
-Une fois tout téléchargé, rendez-vous dans le dossier acteam-trains-backend et entrez ces commandes :  
+Une fois avoir tout téléchargé, rendez-vous dans le dossier acteam-trains-backend et entrez ces commandes :  
 ```composer install```  
 ```php artisan serve```  
 
