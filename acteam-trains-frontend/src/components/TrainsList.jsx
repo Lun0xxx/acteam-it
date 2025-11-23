@@ -5,7 +5,7 @@ export default function TrainsList({ index, type, list, lates }) {
         <div className={`flex flex-col h-[78%] w-full shadow-(--blue-shadow) rounded-xl p-5 mb-5
             ${index !== 0 ? 'mr-5': ''}
         `}>
-            <span className="text-3xl pb-5">{ type }</span>
+            <span className="md:text-3xl text-xl pb-5">{ type }</span>
             <div className="overflow-scroll">
                 {
                     // Adding a component for every train in order to make the list

@@ -10,7 +10,7 @@ export default function NextTrain({ type, lates, train }) {
 
     return (
         <div className="flex flex-col h-[80%] shadow-(--blue-shadow) rounded-xl p-5 mb-5">
-            <span className="text-3xl pb-5">{type === "Arrivées" ? "Prochaine arrivée" : "Prochain départ"}</span>
+            <span className="md:text-3xl text-xl pb-5">{type === "Arrivées" ? "Prochaine arrivée" : "Prochain départ"}</span>
             <TrainComponent
                 type={type}
                 number={train.numero}

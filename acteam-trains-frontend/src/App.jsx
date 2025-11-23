@@ -67,32 +67,67 @@ function AppContent() {
     }
 
     return (
-        <div className="h-full max-w-[1500px] w-full flex justify-between">
-            <div className="flex flex-col w-1/2 pr-3">
-                { trainsData && nextDepartureTrainData && <NextTrain
-                    type={nextDepartureTrainData.type}
-                    lates={trainsData['retardsDeparts']}
-                    train={nextDepartureTrainData.next}
-                /> }
-                { trainsData && <TrainsList
-                    type="Départs"
-                    list={trainsData['departs']}
-                    lates={trainsData['retardsDeparts']}
-                /> }
+        <>
+            <div className="md:hidden h-full w-full flex flex-col justify-between">
+                <div>
+                    <span className="md:text-4xl text-2xl ml-1 mb-2">À venir</span>
+                    <div className="flex flex-col w-full pr-3 mt-5">
+                        { trainsData && nextDepartureTrainData && <NextTrain
+                            type={nextDepartureTrainData.type}
+                            lates={trainsData['retardsDeparts']}
+                            train={nextDepartureTrainData.next}
+                        /> }
+                        { trainsData && nextArrivalTrainData && <NextTrain
+                            index={1}
+                            type={nextArrivalTrainData.type}
+                            lates={trainsData['retardsArrivees']}
+                            train={nextArrivalTrainData.next}
+                        /> }
+                    </div>
+                </div>
+                <div>
+                    <span className="md:text-4xl text-2xl ml-1">Départs / Arrivées</span>
+                    <div className="flex flex-col mt-5">
+                        { trainsData && <TrainsList
+                            type="Départs"
+                            list={trainsData['departs']}
+                            lates={trainsData['retardsDeparts']}
+                        /> }
+                        { trainsData && <TrainsList
+                            type="Arrivées"
+                            list={trainsData['arrivees']}
+                            lates={trainsData['retardsArrivees']}
+                        /> }
+                    </div>
+                </div>
             </div>
-            <div className="flex flex-col w-1/2 pl-3">
-                { trainsData && nextArrivalTrainData && <NextTrain
-                    index={1}
-                    type={nextArrivalTrainData.type}
-                    lates={trainsData['retardsArrivees']}
-                    train={nextArrivalTrainData.next}
-                /> }
-                { trainsData && <TrainsList
-                    type="Arrivées"
-                    list={trainsData['arrivees']}
-                    lates={trainsData['retardsArrivees']}
-                /> }
+            <div className="hidden h-full max-w-[1500px] w-full md:flex justify-between">
+                <div className="flex flex-col w-1/2 pr-3">
+                    { trainsData && nextDepartureTrainData && <NextTrain
+                        type={nextDepartureTrainData.type}
+                        lates={trainsData['retardsDeparts']}
+                        train={nextDepartureTrainData.next}
+                    /> }
+                    { trainsData && <TrainsList
+                        type="Départs"
+                        list={trainsData['departs']}
+                        lates={trainsData['retardsDeparts']}
+                    /> }
+                </div>
+                <div className="flex flex-col w-1/2 pl-3">
+                    { trainsData && nextArrivalTrainData && <NextTrain
+                        index={1}
+                        type={nextArrivalTrainData.type}
+                        lates={trainsData['retardsArrivees']}
+                        train={nextArrivalTrainData.next}
+                    /> }
+                    { trainsData && <TrainsList
+                        type="Arrivées"
+                        list={trainsData['arrivees']}
+                        lates={trainsData['retardsArrivees']}
+                    /> }
+                </div>
             </div>
-        </div>
+        </>
     )
 }
