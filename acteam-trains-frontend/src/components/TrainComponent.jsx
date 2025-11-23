@@ -39,7 +39,7 @@ export default function TrainComponent({index = 0, type, number, from, hour, lat
                     <span className={`font-bold text-white p-1 rounded
                         ${late > 0 ? 'bg-orange-300' : 'bg-green-400'}
                     `}>
-                        { late > 0 ? "En retard" : "A l'heure"}
+                        { late > 0 ? "En retard" : "À l'heure"}
                     </span>
                 </div>
             </div>
