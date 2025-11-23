@@ -10,7 +10,19 @@
 ## Docker
 Installez Docker si ce n'est pas déjà fait.  
 
-  ### Windows
+### Windows / macOS
+
+Téléchargez [Docker](https://www.docker.com/).  
+Exécutez le fichier téléchargé pour installer Docker.
+
+Tout est bon, vous pouvez passer à la suite.
+
+### Linux  
+
+Téléchargez [Docker pour Linux](https://docs.docker.com/desktop/setup/install/linux/) et suivez les instructions.  
+Suivez les instructions pour télécharger le plugin [Docker Compose](https://docs.docker.com/compose/install/linux/).  
+
+Tout est bon, vous pouvez passer à la suite.
 
 Rendez-vous dans l'archive téléchargée une fois extraite et lancez la commande :  
 ```docker compose up -d```  
@@ -18,7 +30,7 @@ Rendez-vous dans l'archive téléchargée une fois extraite et lancez la command
 Lorsque les conteneurs sont démarrés, il ne vous reste plus qu'à vous rendre sur un navigateur et d'entrer l'adresse : localhost:80  
 
 ## Manuellement   
-Premièrement, téléchargez et installez [PHP](https://www.php.net/downloads.php), [node.js](https://nodejs.org/en/download), [Composer](https://getcomposer.org/download/)  
+Premièrement, téléchargez et installez [PHP](https://www.php.net/downloads.php), [node.js](https://nodejs.org/en/download), [Composer](https://getcomposer.org/download/).  
 
 Une fois tout téléchargé, rendez-vous dans le dossier acteam-trains-backend et entrez ces commandes :  
 ```composer install```  
