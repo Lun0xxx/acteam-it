@@ -8,6 +8,7 @@
 * Manuellement
 
 ## Docker
+🔴 Aucune connexion n'est requise
 Installez Docker si ce n'est pas déjà fait.  
 
 #### Windows / macOS
