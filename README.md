@@ -35,7 +35,7 @@ Suivez les instructions pour télécharger le plugin [Docker Compose](https://do
 Tout est bon, vous pouvez passer au lancement des conteneurs.   
 
 ### Lancement des conteneurs  
-Rendez-vous dans l'archive téléchargée une fois extraite et lancez la commande :  
+Rendez-vous dans l'archive téléchargée une fois extraite via un terminal et lancez la commande :  
 ```docker compose up -d```  
 
 Lorsque les conteneurs sont démarrés, il ne vous reste plus qu'à vous rendre sur un navigateur et d'entrer l'adresse : localhost:80  
@@ -49,4 +49,7 @@ Une fois avoir tout téléchargé, rendez-vous dans le dossier acteam-trains-bac
 
 Ensuite, rendez-vous dans le dossier acteam-trains-frontend et entrez ces commandes :  
 ```npm i```  
-```npm run dev```
+```npm run dev```  
+
+Il ne vous reste plus qu'à vous rendre sur le navigateur et rentrer l'adresse indiquée lors du lancement de la dernière commande.  
+Généralement, c'est : localhost:5173
